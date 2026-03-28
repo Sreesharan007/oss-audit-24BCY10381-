@@ -1,15 +1,18 @@
 #!/bin/bash
-# Script 2: FOSS Package Inspector
-# Checks process-related packages
 
-PACKAGE="procps"
+# Script: FOSS Package Inspector
+# Checks package installation and version
+
+PACKAGE="procps"   # Package name
 
 echo "Checking package: $PACKAGE"
 echo "--------------------------------"
 
-# Check if installed
+# Verify if package is installed
 if dpkg -l | grep -q "^ii  $PACKAGE"; then
     echo "$PACKAGE is installed."
+    
+    # Extract and display version
     dpkg -l | grep $PACKAGE | awk '{print "Version:", $3}'
 else
     echo "$PACKAGE is NOT installed."
@@ -17,16 +20,16 @@ fi
 
 echo ""
 
-# Case statement for description
+# Display package description
 case $PACKAGE in
     procps)
         echo "procps: Provides tools like ps, top to monitor CPU scheduling"
         ;;
     bash)
-        echo "bash: Shell used to interact with Linux system"
+        echo "bash: Shell for system interaction"
         ;;
     coreutils)
-        echo "coreutils: Basic file and system utilities"
+        echo "coreutils: Basic system utilities"
         ;;
     *)
         echo "No description available"
