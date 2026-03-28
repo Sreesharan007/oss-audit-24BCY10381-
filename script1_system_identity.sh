@@ -1,19 +1,20 @@
 #!/bin/bash
-# Script 1: System Identity Report
-# Author: Sreesharan P.N | Course: Open Source Software
 
-# --- Variables ---
+# Script: System Identity Report
+# Displays basic system details for OSS audit
+
+# Store user and topic details
 STUDENT_NAME="Sreesharan P.N"
 SOFTWARE_CHOICE="Linux Process Scheduling"
 
-# --- System Info ---
-KERNEL=$(uname -r)
-USER_NAME=$(whoami)
-UPTIME=$(uptime -p)
-DATE=$(date)
-DISTRO=$(grep PRETTY_NAME /etc/os-release | cut -d= -f2 | tr -d '"')
+# Retrieve system information
+KERNEL=$(uname -r)        # Kernel version
+USER_NAME=$(whoami)       # Current logged-in user
+UPTIME=$(uptime -p)       # System uptime
+DATE=$(date)              # Current date and time
+DISTRO=$(grep PRETTY_NAME /etc/os-release | cut -d= -f2 | tr -d '"')  # OS name
 
-# --- Display ---
+# Print formatted report
 echo "======================================"
 echo " Open Source Audit — $STUDENT_NAME"
 echo "======================================"
