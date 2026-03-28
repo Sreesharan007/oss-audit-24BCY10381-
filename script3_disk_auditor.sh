@@ -1,8 +1,6 @@
 #!/bin/bash
-
 # Script: Disk and Permission Auditor
 # Checks directory permissions and size
-
 # List of directories to audit
 DIRS=("/etc" "/var/log" "/home" "/usr/bin" "/tmp")
 
